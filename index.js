@@ -16,7 +16,7 @@ mongoose
     return Recipe.deleteMany()
   })
   .then(() => {
-    Recipe.create(data[0]);
+    Recipe.create(data[1]);
   })
   .then((recipe) => console.log('Recipe has been successfully added:', recipe))
   .catch(error => {
