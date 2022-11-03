@@ -17,9 +17,16 @@ mongoose
   })
   .then(() => {
     //Recipe.create(data[0]); // only includes 1 recipe
-    Recipe.insertMany(data);
+    Recipe.insertMany(data); // adds all recipes
   })
-  .then((recipe) => console.log('Recipe has been successfully added:', recipe))
+  //.then((recipe) => console.log('Recipe has been successfully added:', recipe))
+  .then(() =>{
+   return Recipe.findOneAndUpdate({ title: "Rigatoni alla Genovese" }, { duration: 100})
+  })
+  .then(() => {
+    return Recipe.deleteOne({ title: "CarrotCake" })
+  })
+  .then(() => mongoose.connection.close())
   .catch(error => {
     console.error('Error connecting to the database', error);
   })
