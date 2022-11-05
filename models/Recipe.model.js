@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
-  title: String, // required and unique
+  title: {
+    type: 'String',
+    required: true,
+    unique: true
+  },
   level: String, // has to include the enum, to only allow a few values
   ingredients: [ String ],
   cuisine: String, // required

@@ -21,10 +21,10 @@ mongoose
   })
   //.then((recipe) => console.log('Recipe has been successfully added:', recipe))
   .then(() =>{
-   return Recipe.findOneAndUpdate({ title: "Rigatoni alla Genovese" }, { duration: 100})
+   Recipe.findOneAndUpdate({ duration: 220 }, { duration: 100})
   })
   .then(() => {
-    return Recipe.deleteOne({ title: "CarrotCake" })
+    Recipe.deleteOne({ title: "CarrotCake" })
   })
   .then(() => mongoose.connection.close())
   .catch(error => {
