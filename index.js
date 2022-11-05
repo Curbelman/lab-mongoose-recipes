@@ -21,7 +21,7 @@ mongoose
   })
   //.then((recipe) => console.log('Recipe has been successfully added:', recipe))
   .then(() =>{
-   Recipe.findOneAndUpdate({ duration: 220 }, { duration: 100})
+   Recipe.findOneAndUpdate({ duration: 220 }, { duration: 100}, { new: true })
   })
   .then(() => {
     Recipe.deleteOne({ title: "CarrotCake" })
